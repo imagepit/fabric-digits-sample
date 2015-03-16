@@ -13,6 +13,9 @@
 		4EBA8DDA1AB70A7000CFB16B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EBA8DD91AB70A7000CFB16B /* Images.xcassets */; };
 		4EBA8DDD1AB70A7000CFB16B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBA8DDB1AB70A7000CFB16B /* LaunchScreen.xib */; };
 		4EBA8DE91AB70A7000CFB16B /* sms_sampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBA8DE81AB70A7000CFB16B /* sms_sampleTests.swift */; };
+		4EBA8DF61AB70BDF00CFB16B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBA8DF31AB70BDF00CFB16B /* TwitterKit.framework */; };
+		4EBA8DF71AB70BDF00CFB16B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EBA8DF41AB70BDF00CFB16B /* TwitterKitResources.bundle */; };
+		4EBA8DF81AB70BDF00CFB16B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBA8DF51AB70BDF00CFB16B /* Fabric.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		4EBA8DE21AB70A7000CFB16B /* sms-sampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sms-sampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EBA8DE71AB70A7000CFB16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EBA8DE81AB70A7000CFB16B /* sms_sampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sms_sampleTests.swift; sourceTree = "<group>"; };
+		4EBA8DF31AB70BDF00CFB16B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		4EBA8DF41AB70BDF00CFB16B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
+		4EBA8DF51AB70BDF00CFB16B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EBA8DF61AB70BDF00CFB16B /* TwitterKit.framework in Frameworks */,
+				4EBA8DF81AB70BDF00CFB16B /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +90,9 @@
 				4EBA8DD61AB70A7000CFB16B /* Main.storyboard */,
 				4EBA8DD91AB70A7000CFB16B /* Images.xcassets */,
 				4EBA8DDB1AB70A7000CFB16B /* LaunchScreen.xib */,
+				4EBA8DF31AB70BDF00CFB16B /* TwitterKit.framework */,
+				4EBA8DF41AB70BDF00CFB16B /* TwitterKitResources.bundle */,
+				4EBA8DF51AB70BDF00CFB16B /* Fabric.framework */,
 				4EBA8DD01AB70A7000CFB16B /* Supporting Files */,
 			);
 			path = "sms-sample";
@@ -122,6 +133,7 @@
 				4EBA8DC91AB70A7000CFB16B /* Sources */,
 				4EBA8DCA1AB70A7000CFB16B /* Frameworks */,
 				4EBA8DCB1AB70A7000CFB16B /* Resources */,
+				4EBA8DF21AB70B9300CFB16B /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -192,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EBA8DF71AB70BDF00CFB16B /* TwitterKitResources.bundle in Resources */,
 				4EBA8DD81AB70A7000CFB16B /* Main.storyboard in Resources */,
 				4EBA8DDD1AB70A7000CFB16B /* LaunchScreen.xib in Resources */,
 				4EBA8DDA1AB70A7000CFB16B /* Images.xcassets in Resources */,
@@ -206,6 +219,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EBA8DF21AB70B9300CFB16B /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 8207670ce0736beeea41cabb94ed16fcf04dda54 4c2dd1afce8ad533c2e8223e2fe43cec7a17491f25a73414b3583072b3b3ddf0";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4EBA8DC91AB70A7000CFB16B /* Sources */ = {
@@ -336,6 +366,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/sms-sample",
+				);
 				INFOPLIST_FILE = "sms-sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +380,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/sms-sample",
+				);
 				INFOPLIST_FILE = "sms-sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
